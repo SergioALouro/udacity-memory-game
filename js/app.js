@@ -1,6 +1,6 @@
 // Variables definition
 
-const deck = document.getElementsByClassName('card-deck');
+const deck = document.querySelector('.deck');
 const counter = document.querySelector('.moves');
 const stars = document.getElementsByClassName('stars');
 const timer = document.querySelector('.timer');
@@ -49,6 +49,14 @@ document.body.onload = startGame();
 function startGame() {
 	//shuffle deck
 	listOfCards= shuffle(listOfCards);
+
+	for (var i = 0; i < listOfCards.length; i++){
+		deck.innerHTML ='';
+		[].forEach.call(listOfCards, function(item) {
+			deck.appendChild(item);
+		});
+		listOfCards[i].classList.remove('open', 'match', 'disabled', 'unmatch');
+	}
 	
 	moves = 0;
 	counter.innerHTML = moves;
@@ -80,8 +88,8 @@ function cardOpen() {
 };
 
 function match() {
-	openedCards[0].classList.add('match','disabled');
-	openedCards[1].classList.add('match','disabled');
+	openedCards[0].classList.add('match', 'disabled');
+	openedCards[1].classList.add('match', 'disabled');
 	openedCards[0].classList.remove('open');
 	openedCards[1].classList.remove('open');
 	openedCards = [];
@@ -90,12 +98,27 @@ function match() {
 function unmatch() {
 	openedCards[0].classList.add('unmatch');
 	openedCards[1].classList.add('unmatch');
+	//disable();
 	setTimeout(function(){
-		openedCards[0].classList.remove('open');
-		openedCards[1].classList.remove('open');
+		openedCards[0].classList.remove('open', 'unmatch', 'disabled');
+		openedCards[1].classList.remove('open', 'unmatch', 'disabled');
+		//enable();
 		openedCards = [];
 	},700);
 }
+
+/*function enable() {
+	array.prototype.filter.call(listOfCards,function(card){
+		card.classList.remove('disabled');
+	});
+}
+
+function disable(){
+	array.prototype.filter.call(listOfCards, function(card){
+		card.classList.add('disabled');
+	});
+}
+*/
 
 function moveCounter() {
 	moves++;
