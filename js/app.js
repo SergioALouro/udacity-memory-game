@@ -5,10 +5,14 @@ const counter = document.querySelector('.moves');
 const stars = document.getElementsByClassName('stars');
 const timer = document.querySelector('.timer');
 const star = document.getElementsByClassName('fa fa-star');
+const popup = document.querySelector('.popup-background');
+const closepopup = document.querySelector('.close');
 
 let card = document.getElementsByClassName('card');
+let matchCard = document.getElementsByClassName('match');
 let listOfCards = [...card];
 let listOfStars = [...star];
+let finalScore;
 let moves;
 let minute;
 let second;
@@ -149,11 +153,44 @@ function startTimer() {
 	},1000);
 }
 
+
+
+function endGame() {
+    if(matchCard.length === 16) {
+        clearInterval(interval);
+        totalTime = timer.innerHTML;
+
+        popup.style.display = 'block';
+
+        finalScore = document.querySelector('.stars').innerHTML;
+
+        document.getElementById('finalScore').innerHTML = finalScore;
+        document.getElementById('totalMoves').innerHTML = moves;
+        document.getElementById('totalTime').innerHTML = totalTime;
+
+	}
+}
+
+function playAgain() {
+	popup.style.display = 'none';
+	startGame();
+}
+
+function popupClose(){
+	closepopup.addEventListener('click', function(){
+		popup.style.display = 'none';
+	});
+}
+
+
 for( const listOfCard of listOfCards) {
 	card = listOfCard;
 	card.addEventListener('click', showCards);
 	card.addEventListener('click', cardOpen);
+	card.addEventListener("click",endGame);
 };
+
+
 
 
 /*
