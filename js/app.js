@@ -50,12 +50,12 @@ function startGame() {
 	//shuffle deck
 	listOfCards= shuffle(listOfCards);
 
-	for (var i = 0; i < listOfCards.length; i++){
+	for ( const listOfCard of listOfCards) {
 		deck.innerHTML ='';
 		[].forEach.call(listOfCards, function(item) {
 			deck.appendChild(item);
 		});
-		listOfCards[i].classList.remove('open', 'match', 'disabled', 'unmatch');
+		listOfCard.classList.remove('open', 'match', 'disabled', 'unmatch');
 	}
 	
 	moves = 0;
@@ -149,8 +149,8 @@ function startTimer() {
 	},1000);
 }
 
-for(let i = 0; i < listOfCards.length; i++) {
-	card = listOfCards[i];
+for( const listOfCard of listOfCards) {
+	card = listOfCard;
 	card.addEventListener('click', showCards);
 	card.addEventListener('click', cardOpen);
 };
