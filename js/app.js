@@ -64,7 +64,12 @@ function startGame() {
 	
 	moves = 0;
 	counter.innerHTML = moves;
-
+	listOfStars[2].style.display ='block';
+	listOfStars[2].style.display ='block';
+	listOfStars[1].style.display ='block';
+	listOfStars[2].style.color ='#FFD700';
+	listOfStars[1].style.color ='#FFD700';
+	listOfStars[0].style.color ='#FFD700';
 	stars[0].style.color = "#FFD700";
 
 	second = 0;
