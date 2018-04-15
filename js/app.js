@@ -26,12 +26,7 @@ let interval;
 
 
 
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
+
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -59,11 +54,15 @@ function startGame() {
 		[].forEach.call(listOfCards, function(item) {
 			deck.appendChild(item);
 		});
-		listOfCard.classList.remove('open', 'match', 'disabled', 'unmatch');
+		// remove classes
+		listOfCard.classList.remove('open', 'match', 'disabled', 'unmatch', 'show');
 	}
 	
+	//reset moves
 	moves = 0;
 	counter.innerHTML = moves;
+
+	//reset stars
 	listOfStars[2].style.display ='block';
 	listOfStars[2].style.display ='block';
 	listOfStars[1].style.display ='block';
@@ -72,18 +71,21 @@ function startGame() {
 	listOfStars[0].style.color ='#FFD700';
 	stars[0].style.color = "#FFD700";
 
+	// reset timer
 	second = 0;
 	minute = 0;
 	timer.innerHTML = '0 mins 0 secs';
 	clearInterval(interval);
 }
 
+//show card function
 showCards = function() {
 	this.classList.toggle('open');
 	this.classList.toggle('show');
 	this.classList.toggle("disabled");
 };
 
+//card open function
 function cardOpen() {
 	moveCounter();
 	openedCards.push(this);
@@ -97,6 +99,7 @@ function cardOpen() {
 	}
 };
 
+// apply match class
 function match() {
 	openedCards[0].classList.add('match', 'disabled','show');
 	openedCards[1].classList.add('match', 'disabled','show');
@@ -105,31 +108,21 @@ function match() {
 	openedCards = [];
 }
 
+//apply unmatch class
 function unmatch() {
 	openedCards[0].classList.add('unmatch','show');
 	openedCards[1].classList.add('unmatch','show');
-	//disable();
+
+	//define timeout when unmatch is applied 
 	setTimeout(function(){
 		openedCards[0].classList.remove('open', 'unmatch', 'disabled','show');
 		openedCards[1].classList.remove('open', 'unmatch', 'disabled','show');
-		//enable();
 		openedCards = [];
-	},1500);
+	},1000);
 }
 
-/*function enable() {
-	array.prototype.filter.call(listOfCards,function(card){
-		card.classList.remove('disabled');
-	});
-}
 
-function disable(){
-	array.prototype.filter.call(listOfCards, function(card){
-		card.classList.add('disabled');
-	});
-}
-*/
-
+// move counter function
 function moveCounter() {
 	moves++;
 	counter.innerHTML = moves;
@@ -137,6 +130,7 @@ function moveCounter() {
 		startTimer();
 	}
 
+// define score
 	if(moves > 26 && moves < 32){
 		listOfStars[2].style.display ='none';
 		listOfStars[1].style.color ='#C0C0C0';
@@ -148,6 +142,7 @@ function moveCounter() {
 	}
 }
 
+// start time definition
 function startTimer() {
 	interval = setInterval(function(){
 		timer.innerHTML = minute + ' mins' + second + ' secs';
@@ -160,7 +155,7 @@ function startTimer() {
 }
 
 
-
+// show win screen 
 function endGame() {
     if(matchCard.length === 16) {
         clearInterval(interval);
@@ -177,11 +172,13 @@ function endGame() {
 	}
 }
 
+// play again action button
 function playAgain() {
 	popup.style.display = 'none';
 	startGame();
 }
 
+// popup close action
 function popupClose(){
 	closepopup.addEventListener('click', function(){
 		popup.style.display = 'none';
@@ -189,6 +186,7 @@ function popupClose(){
 }
 
 
+// Event listener setup 
 for( const listOfCard of listOfCards) {
 	card = listOfCard;
 	card.addEventListener('click', showCards);
@@ -198,21 +196,3 @@ for( const listOfCard of listOfCards) {
 
 
 
-
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- *    function showCard() {
-	$(".card").click(function(){
-		$(this).toggleClass('open');
-		$(this).toggleClass('show');
-	});
-}
-showCard();
- */
