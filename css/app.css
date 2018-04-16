@@ -15,27 +15,24 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-y: hidden;
 
 }
 
 body {
     
     font-family: 'Pacifico', cursive;
-    background: #bdc3c7;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(#2c3e50, #bdc3c7);
-    background: -o-linear-gradient(#2c3e50, #bdc3c7);
-    background: linear-gradient(#2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    overflow-y: hidden;
+    background-image: url('../img/images4.jpg');
+    background-position: center;
 }
 
 
-.container {
+.wrapper {
     max-width: 650px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    margin-top: 50px;
 }
 
 h1 {
@@ -43,6 +40,7 @@ h1 {
     color: white;
     text-shadow: 2px 2px black;
     margin-bottom: 30px;
+    margin-top: 50px;
 }
 
 /*
@@ -221,7 +219,7 @@ popup styles
     background-color: #2e3d49;
     border: solid 2px;
     font-size: 15px;
-    padding: 0px 7px;
+    padding: 5px 5px;
     top: -15px;
     right: -15px;
     position: absolute;
@@ -275,8 +273,98 @@ animation definition
     100%{ background-color:  #009933; transform: rotateZ(360deg); }
 }
 
-@media screen and (max-width: 600px) {
-    .score-panel, .timer {
+
+@media screen and (max-width: 450px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    .score-panel {
         font-size: 20px;
+    }
+
+    .timer {
+        font-size: 20px;
+    }
+
+    .score-panel .restart {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .close {
+        top: 0;
+        right: 0;
+        border: none;
+        color: #000;
+        background-color: #fff;
+    }
+
+    .popup h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        border-radius: 7%;
+    }
+
+    #finalScore {
+        font-size: 20px;
+    }
+
+    .win {
+        font-size: 17px;
+    }
+
+    .playAgain {
+    margin-top: 10px;
+    font-size: 17px;
+    padding: 0px 10px;
+    margin-top: 10px;
+    }
+}
+
+@media screen and (min-width: 451px) and (max-width: 630px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    .score-panel {
+        font-size: 25px;
+    }
+
+    .timer {
+        font-size: 25px;
+    }
+
+    .score-panel .restart {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .close {
+        top: 0;
+        right: 0;
+        border: none;
+        color: #000;
+        background-color: #fff;
+    }
+
+    .popup h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        border-radius: 7%;
+    }
+
+    #finalScore {
+        font-size: 20px;
+    }
+
+    .win {
+        font-size: 17px;
+    }
+
+    .playAgain {
+    margin-top: 10px;
+    font-size: 17px;
+    padding: 0px 10px;
     }
 }

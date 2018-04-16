@@ -12,74 +12,78 @@
 </head>
 <body>
 
-    <div class="container">
         <header>
-            <h1>Matching Game</h1>
+        	<div class="wrapper">
+        		<h1>Matching Game</h1>
+        	</div>
         </header>
 
         <section class="score-panel">
-        	<ul class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        	</ul>
-
-        	<span class="moves">0</span> Moves
-            <div class="timer"></div>
-            <button class="restart" onclick="startGame()">Restart</button>
+        	<div class="wrapper">
+        		<ul class="stars">
+	        		<li><i class="fa fa-star"></i></li>
+	        		<li><i class="fa fa-star"></i></li>
+	        		<li><i class="fa fa-star"></i></li>
+        		</ul>
+	        	<span class="moves">0</span> Moves
+	            <div class="timer"></div>
+	            <button class="restart" onclick="startGame()">Restart</button>
+        	</div>
         </section>
-
-        <ul class="deck">
-            <li class="card" type="diamond">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card" type="plane">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card" type="anchor">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card" type="bolt">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card" type="cube">
-                <i class="fa fa-cube"></i>
-            </li>
-            <li class="card" type="anchor">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card" type="leaf">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card" type="bicycle">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card" type="diamond">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card" type="bomb">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card" type="leaf">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card" type="bomb">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card" type="bolt">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card" type="bicycle">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card" type="plane">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card" type="cube">
-                <i class="fa fa-cube"></i>
-            </li>
-        </ul>
-
+		
+		<div class="wrapper">
+			<ul class="deck">
+	            <li class="card" type="diamond">
+	                <i class="fa fa-diamond"></i>
+	            </li>
+	            <li class="card" type="plane">
+	                <i class="fa fa-paper-plane-o"></i>
+	            </li>
+	            <li class="card" type="anchor">
+	                <i class="fa fa-anchor"></i>
+	            </li>
+	            <li class="card" type="bolt">
+	                <i class="fa fa-bolt"></i>
+	            </li>
+	            <li class="card" type="cube">
+	                <i class="fa fa-cube"></i>
+	            </li>
+	            <li class="card" type="anchor">
+	                <i class="fa fa-anchor"></i>
+	            </li>
+	            <li class="card" type="leaf">
+	                <i class="fa fa-leaf"></i>
+	            </li>
+	            <li class="card" type="bicycle">
+	                <i class="fa fa-bicycle"></i>
+	            </li>
+	            <li class="card" type="diamond">
+	                <i class="fa fa-diamond"></i>
+	            </li>
+	            <li class="card" type="bomb">
+	                <i class="fa fa-bomb"></i>
+	            </li>
+	            <li class="card" type="leaf">
+	                <i class="fa fa-leaf"></i>
+	            </li>
+	            <li class="card" type="bomb">
+	                <i class="fa fa-bomb"></i>
+	            </li>
+	            <li class="card" type="bolt">
+	                <i class="fa fa-bolt"></i>
+	            </li>
+	            <li class="card" type="bicycle">
+	                <i class="fa fa-bicycle"></i>
+	            </li>
+	            <li class="card" type="plane">
+	                <i class="fa fa-paper-plane-o"></i>
+	            </li>
+	            <li class="card" type="cube">
+	                <i class="fa fa-cube"></i>
+	            </li>
+        	</ul>
+		</div>
+        
         <div class="popup-background">
             <div class="popup">
                 <a href="#" class="close" onclick="popupClose()">&#10006;</a>
@@ -89,7 +93,7 @@
                 <button class="playAgain" onclick="playAgain()">Shuffle</button>
             </div>
         </div>
-    </div>
+    
 
     <script src="js/app.js"></script>
 </body>

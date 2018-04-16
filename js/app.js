@@ -118,7 +118,7 @@ function unmatch() {
 		openedCards[0].classList.remove('open', 'unmatch', 'disabled','show');
 		openedCards[1].classList.remove('open', 'unmatch', 'disabled','show');
 		openedCards = [];
-	},1000);
+	},1250);
 }
 
 
