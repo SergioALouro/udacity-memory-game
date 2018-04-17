@@ -69,7 +69,7 @@ function startGame() {
 	listOfStars[2].style.color ='#FFD700';
 	listOfStars[1].style.color ='#FFD700';
 	listOfStars[0].style.color ='#FFD700';
-	stars[0].style.color = "#FFD700";
+	stars[0].style.color = '#FFD700';
 
 	// reset timer
 	second = 0;
@@ -82,7 +82,7 @@ function startGame() {
 showCards = function() {
 	this.classList.toggle('open');
 	this.classList.toggle('show');
-	this.classList.toggle("disabled");
+	this.classList.toggle('disabled');
 };
 
 //card open function
