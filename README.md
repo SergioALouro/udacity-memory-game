@@ -7,16 +7,7 @@
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+ In this game you have to find all 8 pairs of cards. You will start with a three stars rating. If you finish the game under 26 moves you'll be awarded whith a 3 stars, if you finish the game between 27 and 32 moves you'll be awarded with 2 stars and if you finish the game with more than 32 moves you'll have a 1 star. In the end of the game a pop up will appear, in this pop up will be displayed your score and the time that you've taken to complete the game. If you click in the X you will close the pop up and can see all the cards . If you click in the Shuffle button the game will restart.
 
-To get started, open `js/app.js` and start building out the app's functionality
+## ContributingThis repository is based in a repository from Udacity. You are free to use this code and change it at your discretion. [CONTRIBUTING.md](CONTRIBUTING.md).
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
-
-coisas e cenas bla bla bla bla
